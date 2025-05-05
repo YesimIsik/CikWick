@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -60,6 +61,8 @@ public class PlayerController : MonoBehaviour
     //Oyuncunun mevcut durumunu yöneten bileşen.
     private Rigidbody _playerRigidbody;
     //Oyuncunun fiziksel hareketlerini kontrol eden Rigidbody bileşeni.
+    private float _startingMovementSpeed, _startingJumpForce;
+
     private float _horizontalInput, _verticalInput;
     //Oyuncunun yatay ve dikey girişlerini saklar.
     private Vector3 _movementDirection;
@@ -76,6 +79,9 @@ public class PlayerController : MonoBehaviour
         //GetComponent<T>() metodu ile aynı GameObject üzerindeki StateController ve Rigidbody bileşenleri alınır.
         _playerRigidbody.freezeRotation = true;
         //Rigidbody'nin fiziksel etkileşimlerle dönmesini engeller.
+        _startingMovementSpeed = _movementSpeed;
+        _startingJumpForce = _jumpForce;
+
 
     }
 
@@ -253,7 +259,7 @@ public class PlayerController : MonoBehaviour
     //Genellikle bir zıplama işleminden sonra belirli bir süre beklenir ve bu süre sonunda bu metod çağrılarak oyuncunun tekrar zıplamasına izin verilir.
 
     }
-
+    #region Helpers Functions
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, _playerHeight * 0.5f + 0.2f, _graundLayer);
@@ -273,6 +279,29 @@ public class PlayerController : MonoBehaviour
         return _isSliding;
         //Oyuncunun kayma durumunu belirten bir boole değişkenidir. true ise oyuncu kayıyor, false ise kaymıyor demektir.
     }
+    public void SetMovementSpeed(float speed, float duration)
+    {
+        _movementSpeed += speed;
+        Invoke(nameof(ResetMovementSpeed), duration);
+    }
+
+    private void ResetMovementSpeed()
+    {
+        _movementSpeed = _startingMovementSpeed;
+  
+    }
+
+    public void SetJumpForce(float force,float duration)
+    {
+        _jumpForce += force;
+        Invoke(nameof(ResetJumpForce), duration);
+    }
+    private void ResetJumpForce()
+    {
+        _jumpForce = _startingJumpForce;
+    }
+    #endregion
 }
+
 
 
