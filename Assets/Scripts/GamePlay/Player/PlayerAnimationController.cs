@@ -79,7 +79,7 @@ public class PlayerAnimationController : MonoBehaviour
                 //Oyuncu SlideIdle (kayma bekleme) durumundaysa
                 _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDING, true);
                 //IS_SLIDING parametresi true olarak ayarlanýr, yani kayma animasyonu etkinleþtirilir.
-                _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDING_ACTIVE, false);
+                _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDIN_ACTIVE, false);
                 //IS_SLIDIN_ACTIVE parametresi false olarak ayarlanýr, yani aktif kayma animasyonu devre dýþý býrakýlýr
                 break;
 
@@ -87,7 +87,7 @@ public class PlayerAnimationController : MonoBehaviour
                 //Oyuncu Slide (kayma) durumundaysa
                 _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDING, true);
                 //IS_SLIDING parametresi true olarak ayarlanýr, yani kayma animasyonu etkinleþtirilir.
-                _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDING_ACTIVE, true);
+                _playerAnimator.SetBool(Consts.PlayerAnimations.IS_SLIDIN_ACTIVE, true);
                 //IS_SLIDIN_ACTIVE parametresi true olarak ayarlanýr, yani aktif kayma animasyonu etkinleþtirilir.
                 break;
         }

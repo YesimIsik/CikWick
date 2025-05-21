@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a484b7043653946afc565692da6c35, type: 3}
+  m_Name: GreenApple
+  m_EditorClassIdentifier: 
+  _increaseDecreaseMultiplier: 8
+  _resetBoostDuration: 5
+  _activeSprite: {fileID: 21300000, guid: ec23efa2c5d6c62429ca8e2539d8d890, type: 3}
+  _passiveSprite: {fileID: 21300000, guid: f387e15437898b6478c7d2fb58873fa7, type: 3}
+  _activeAppleSprite: {fileID: 21300000, guid: 70df993518474404f8b8f8ee833a635f, type: 3}
+  _passiveAppleSprite: {fileID: 21300000, guid: 70df993518474404f8b8f8ee833a635f, type: 3}

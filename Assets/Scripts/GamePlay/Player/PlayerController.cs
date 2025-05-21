@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public event Action OnPlayerJumped;
     //Oyuncu zıpladığında tetiklenecek bir olaydır.Diğer bileşenler bu olaya abone olarak zıplama anında belirli işlemleri gerçekleştirebilir.
-
+    public event Action<PlayerState> OnPlayerStateChanged;
 
     [Header("References")]
     //Unity editöründe ilgili değişkenleri gruplamak için kullanılır.
@@ -175,6 +175,7 @@ public class PlayerController : MonoBehaviour
         {
             _stateController.ChangeState(newState);
             //Oyuncunun durumunu yeni belirlenen duruma günceller.Bu genellikle animasyonları tetiklemek veya belirli hareket davranışlarını değiştirmek için kullanılır.
+            OnPlayerStateChanged?.Invoke(newState);
         }
 
 
