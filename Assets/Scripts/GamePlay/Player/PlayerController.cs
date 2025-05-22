@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -280,31 +281,32 @@ public class PlayerController : MonoBehaviour
         return _isSliding;
         //Oyuncunun kayma durumunu belirten bir boole değişkenidir. true ise oyuncu kayıyor, false ise kaymıyor demektir.
     }
-    public void SetMovementSpeed(float speed, float duration)
+    public void SetMovementSpeed(float speed, float duration)//Bu yöntem, oyuncunun hareket hızını geçici olarak artırmak için kullanılır.
     {
-        _movementSpeed += speed;
-        Invoke(nameof(ResetMovementSpeed), duration);
+        _movementSpeed += speed;//Mevcut hareket hızına (_movementSpeed) speed değeri eklenir. Bu, geçici bir hız artışı sağlar.
+        Invoke(nameof(ResetMovementSpeed), duration);//Unity’nin Invoke() fonksiyonu, burada belirtilen süre (duration) sonra ResetMovementSpeed fonksiyonunu çalıştırır.
+        // Yani belli bir süre sonra hız normale döner.
     }
 
-    private void ResetMovementSpeed()
+    private void ResetMovementSpeed()//Bu, SetMovementSpeed() metoduyla artırılan hareket hızını sıfırlamak için çağrılan özel (private) bir metottur.
     {
-        _movementSpeed = _startingMovementSpeed;
-  
+        _movementSpeed = _startingMovementSpeed;//Hareket hızı, başlangıç değeri olan _startingMovementSpeed'e geri ayarlanır.
+
     }
 
-    public void SetJumpForce(float force,float duration)
+    public void SetJumpForce(float force,float duration)//Bu metod, oyuncunun zıplama gücünü geçici olarak artırır.
     {
-        _jumpForce += force;
-        Invoke(nameof(ResetJumpForce), duration);
+        _jumpForce += force;//Zıplamaya eklenecek ekstra kuvvet.
+        Invoke(nameof(ResetJumpForce), duration);//Belirtilen duration süresi sonunda ResetJumpForce() metodu çalıştırılır.
     }
-    private void ResetJumpForce()
+    private void ResetJumpForce()//Bu metod, geçici olarak artırılan zıplama gücünü eski haline döndürür.
     {
-        _jumpForce = _startingJumpForce;
+        _jumpForce = _startingJumpForce;//Zıplama gücü, başlangıç değeri olan _startingJumpForce’a geri ayarlanır.
     }
 
-    public Rigidbody GetPlayerRigidbody()
+    public Rigidbody GetPlayerRigidbody()//Bu metod, oyuncunun Rigidbody bileşenini dışarıdan erişilebilir kılmak için kullanılır.
     {
-        return _playerRigidbody;
+        return _playerRigidbody;//_playerRigidbody adındaki fiziksel bileşen dışarıya geri döndürülür. Böylece başka sınıflar bu Rigidbody ile işlem yapabilir.
     }
     #endregion
 }
