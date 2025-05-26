@@ -7,6 +7,11 @@ public class Consts
 //Consts adýnda bir genel (public) sýnýf tanýmlanýr.Bu sýnýf, sabit deðerleri (constants) tutmak için kullanýlýr.
 
 {
+    public struct SceneNames
+    {
+        public const string GAME_SCENE = "GameScene1";
+    }
+
     public struct PlayerAnimations
     //PlayerAnimations adýnda bir genel (public) yapý (struct) tanýmlanýr. Bu yapý, oyuncu animasyonlarýyla ilgili sabit deðerleri gruplamak için kullanýlýr.
     {
