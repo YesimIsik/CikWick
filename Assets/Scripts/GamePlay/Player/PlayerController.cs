@@ -89,6 +89,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     //Update metodu her karede bir kez çağrılır.
     {
+        if (GameManager.Instance.GetCurrentGameState() != GameState.Play
+          && GameManager.Instance.GetCurrentGameState() != GameState.Resume)
+        {
+            return;
+        }
         SetInputs();
         //Kullanıcı girişlerini işler.
         SetState();
@@ -102,6 +107,11 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     //FixedUpdate metodu sabit zaman aralıklarında çağrılır ve fiziksel işlemler için kullanılır.
     {
+        if (GameManager.Instance.GetCurrentGameState() != GameState.Play
+          && GameManager.Instance.GetCurrentGameState() != GameState.Resume)
+        {
+            return;
+        }
         SetPlayerMovement();
         //Oyuncunun hareketini fiziksel olarak uygular.
     }

@@ -14,8 +14,14 @@ public class PlayerAnimationController : MonoBehaviour
     //Her karede çaðrýlýr.
 
     {
-        SetPlayerAnimations();
+        
         //Bu metotta, oyuncunun mevcut durumuna göre uygun animasyonlar ayarlanýr.
+        if (GameManager.Instance.GetCurrentGameState() != GameState.Play
+           && GameManager.Instance.GetCurrentGameState() != GameState.Resume)
+        {
+            return;
+        }
+        SetPlayerAnimations();
     }
 
     private void Awake()
