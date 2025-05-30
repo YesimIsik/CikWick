@@ -5,15 +5,21 @@ using UnityEngine;
 // Oyuncunun çevre ile etkileþimlerini kontrol eder.
 
 {
+    [SerializeField] private Transform _playerVisualTransform;
 
     private PlayerController _playerController;
     //Bu sýnýfta kullanýlmak üzere saklanan referans. Daha sonra hareket veya özellik güncellemek için kullanýlýr.
+
+    private Rigidbody _playerRigidbody;
 
     private void Awake()
     //Bir script'in baðlý olduðu GameObject aktif olurken ilk çalýþan fonksiyondur.Burada component referanslarý atanýr.
     {
         _playerController = GetComponent<PlayerController>();
         //Bu satýr ayný GameObject üzerinde bulunan PlayerController bileþenini bulur ve _playerController deðiþkenine atar.
+        _playerRigidbody = GetComponent<Rigidbody>();
+            
+
     }
     private void OnTriggerEnter(Collider other)
     //Oyuncu bir "Trigger Collider" alanýna girdiðinde çalýþýr.
@@ -41,4 +47,14 @@ using UnityEngine;
             //Parametre olarak _playerController gönderilir. Böylece boost etkisi doðrudan oyuncunun kontrolü üzerinde uygulanýr.
         }
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.TryGetComponent<IDamageable>(out var damagable))
+        {
+            damagable.GiveDamage(_playerRigidbody,_playerVisualTransform);
+        }
+    }
+
+
 }
