@@ -31,6 +31,18 @@ public class Consts
         public const string IS_SLIDIN_ACTIVE = "IsSlidingActive";
         //IS_SLIDIN_ACTIVE adýnda bir sabit dize tanýmlanýr ve deðeri "IsSlidingActive" olarak atanýr.Bu aktif kayma durumunu kontrol eden Animator parametresinin adýdýr.
     }
+
+    public struct CatAnimations
+    {
+        public const string IS_IDLING = "IsIdling";
+
+        public const string IS_WALKING = "IsWalking";
+
+        public const string IS_RUNNING = "IsRunning";
+
+        public const string IS_ATTACKING = "IsAttacking";
+
+     }
     public struct OtherAnimations
     //Bu bir struct (yapý) tanýmýdýr. Sýnýfa benzer ama genellikle veri taþýyýcý ve sabit koleksiyonlar için kullanýlýr.
     //OtherAnimations: Yapýnýn adý. Animasyonlarla ilgili sabit deðerleri saklamak için kullanýlýyor.
