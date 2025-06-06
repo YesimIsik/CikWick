@@ -1,4 +1,5 @@
 using DG.Tweening;
+using MaskTransitions;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,6 +33,10 @@ public class SettingsUI : MonoBehaviour
         _settingsPopupObject.transform.localScale = Vector3.zero;
         _settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         _resumeButton.onClick.AddListener(OnResumeButtonClicked);
+        _mainMenuButton.onClick.AddListener(() =>
+        {
+            TransitionManager.Instance.LoadLevel(Consts.SceneNames.MENU_SCENE);
+        });
     }
 
     private void OnSettingsButtonClicked()
