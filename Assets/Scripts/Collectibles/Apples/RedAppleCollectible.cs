@@ -29,6 +29,8 @@ public class RedAppleCollectible : MonoBehaviour, ICollectible
         _playerStateUI.PlayBoosterUIAnimations(_playerBoosterTransform,_playerBoosterImage,_playerStateUI.GetRedAppleImage,
         _appleDesignSO.ActiveSprite,_appleDesignSO.PassiveSprite,_appleDesignSO.ActiveAppleSprite,
         _appleDesignSO.PassiveAppleSprite,_appleDesignSO.ResetBoostDuration);
+
+        CameraShake.Instance.ShakeCamera(0.5f, 0.5f);
         Destroy(gameObject);
         //Oyuncu kontrolcüsünün metodunu çaðýrýr.Bu metot oyuncunun hareket hýzýný ayarlamak için kullanýlýr.
         //Hýz çarpaný: Oyuncunun hareket hýzý bu oranla artýrýlýr veya azaltýlýr.

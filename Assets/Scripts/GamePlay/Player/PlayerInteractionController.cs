@@ -53,6 +53,7 @@ using UnityEngine;
         if(other.TryGetComponent<IDamageable>(out var damagable))
         {
             damagable.GiveDamage(_playerRigidbody,_playerVisualTransform);
+            CameraShake.Instance.ShakeCamera(1f, 0.5f);
         }
     }
 
