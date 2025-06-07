@@ -15,6 +15,7 @@ public class PlayerStateUI : MonoBehaviour//Unity de UI yönetimi için kullanýlan
     [SerializeField] private RectTransform _boosterSpeedTransform;
     [SerializeField] private RectTransform _boosterJumpTransform;
     [SerializeField] private RectTransform _boosterSlowTransform;
+    [SerializeField] private PlayableDirector _playableDirector;
     //Bu deðiþkenler UI ögelerine karþýlýk gelir.
     //RectTransform:UI nesnesinin pozisyon, boyut ve hizalanmasýný temsil eder.
     [Header("Images")]
@@ -62,7 +63,14 @@ public class PlayerStateUI : MonoBehaviour//Unity de UI yönetimi için kullanýlan
     {
         _playerController.OnPlayerStateChanged += PlayerController_OnPlayerStateChanged;
         // Oyuncunun UI'de yürüyüp yürümediðini, kayýp kaymadýðýný vs. güncelleyen bir fonksiyondur.
+        _playableDirector.stopped += OnTimelineFineshed;
 
+
+    }
+
+    private void OnTimelineFineshed(PlayableDirector director)
+    {
+        SetStateUserInterfaces(_playerWalkingActiveSprite, _playerSlidingPassiveSprite, _playerWalkingTransform, _playerSlidingTransform);
     }
 
     private void PlayerController_OnPlayerStateChanged(PlayerState playerState)//Bu metod, PlayerController sýnýfýndan gelen OnPlayerStateChanged event'ine baðlýdýr.
