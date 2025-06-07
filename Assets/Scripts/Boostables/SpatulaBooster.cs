@@ -23,7 +23,8 @@ public class SpatulaBooster : MonoBehaviour, IBoostable
         playerRigidbody.AddForce(transform.forward * _jumpForce, ForceMode.Impulse);//Spatulanýn yönünde JumpForce uygulanýr.
         _isActivated = true;
         Invoke(nameof(ResetActivation), 0.2f);
-        //Aktif hale geçer ve 0.2 saniye sonra tekrar devre dýþý býrakýlýr(ResetActivation ile) .
+        //Aktif hale geçer ve 0.2 saniye sonra tekrar devre dýþý býrakýlýr(ResetActivation ile) 
+        AudioManager.Instance.Play(SoundType.SpatulaSound);
     }   
 
     private void PlayBoostAnimation()

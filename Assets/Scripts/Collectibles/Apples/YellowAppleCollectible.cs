@@ -26,6 +26,7 @@ public class YellowAppleCollectible : MonoBehaviour, ICollectible
      _appleDesignSO.ActiveSprite, _appleDesignSO.PassiveSprite, _appleDesignSO.ActiveAppleSprite,
      _appleDesignSO.PassiveAppleSprite, _appleDesignSO.ResetBoostDuration);
         CameraShake.Instance.ShakeCamera(0.5f, 0.5f);
+        AudioManager.Instance.Play(SoundType.PickupBadSound);
         Destroy(gameObject);
         //Oyuncunun hareket hýzýný geçici olarak azaltmak için yazýlmýþ bir fonksiyondur.
         //Bu satýr sayesinde sarý elmayý toplayan oyuncunun hýzý geçici olarak deðiþir.

@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour
             //Oyuncunun zıplama eylemini gerçekleştiren fonksiyonu çağırır.Bu fonksiyon genellikle zıplama kuvvetini uygular ve ilgili animasyonları tetikler.
             Invoke(nameof(ResetJumping), _jumpCooldown);
             //Belirtilen _jumpCooldown süresi sonunda ResetJumping fonksiyonunu çağırır.Bu zıplama bekleme süresi sona erdiğinde oyuncunun tekrar zıplayabilmesini sağlar.
+            AudioManager.Instance.Play(SoundType.JumpSound);
         }
     }
     private void SetState()

@@ -26,6 +26,7 @@ public class GreenAppleCollectible : MonoBehaviour, ICollectible
       _appleDesignSO.ActiveSprite, _appleDesignSO.PassiveSprite, _appleDesignSO.ActiveAppleSprite,
       _appleDesignSO.PassiveAppleSprite, _appleDesignSO.ResetBoostDuration);
         CameraShake.Instance.ShakeCamera(0.5f, 0.5f);
+        AudioManager.Instance.Play(SoundType.PickupGoodSound);
         Destroy(gameObject);
         //Bu satýr oyuncunun zýplama gücünü (jump force) ayarlar.
         //Zýplama gücüne uygulanacak olan çarpan deðeridir (örneðin: 1.5x gibi).

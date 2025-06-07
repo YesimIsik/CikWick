@@ -6,11 +6,9 @@ public enum SoundType
     InteractionSound,
     JumpSound,
     LoseSound,
-    MoveSound,
     SpatulaSound,
     TransitionSound,
-    TypingSound,
-    WinSound,
+     WinSound,
     PickupGoodSound,
     PickupBadSound,
     ChickSound
