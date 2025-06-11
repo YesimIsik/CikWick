@@ -324,16 +324,17 @@ public class PlayerController : MonoBehaviour
     {
         if( Physics.Raycast(transform.position,Vector3.down,out RaycastHit hit, _playerHeight * 0.5f + 0.2f, _graundLayer))
         {
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.FLOOR_LAYER))
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.FLOOR_LAYER))///Eğer Playerımız(civciv) tagi FLOOR_LAYER olan floorumuza değerse kedi kovalamaya başlar .
             {
-                return true;
+                return true;//Eğer zemin uygunsa true döner.
             }
-            else if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.GROUND_LAYER))
+            else if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.GROUND_LAYER))//Eğer zemin başka bir katmandaysa ve bu katman GROUND_LAYER ise bu zemin kedi için uygun değildir.
+
             {
-                return false;
+                return false;//Eğer zemin GROUND_LAYER ise, false döner. Kedi kovalamaya başlayamaz.
             }
         }
-        return false;
+        return false;//Eğer raycast hiçbir zemine çarpmazsa veya çarptığı zemin yukarıdaki iki katman dışında bir şeyse, yine false döner.
     }
 
     #endregion

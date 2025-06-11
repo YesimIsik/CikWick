@@ -48,12 +48,19 @@ using UnityEngine;
         }
     }
 
-    private void OnParticleCollision(GameObject other)
+    private void OnParticleCollision(GameObject other)//Bir Particle System bu objeyle çarpýþtýðýnda otomatik olarak çaðrýlýr.
     {
-        if(other.TryGetComponent<IDamageable>(out var damagable))
+        if(other.TryGetComponent<IDamageable>(out var damagable))//other objesinde IDamageable arayüzünü uygulayan bir bileþen olup olmadýðýný kontrol eder.
+                                                                 //Varsa, damagable deðiþkenine referansý aktarýr.
+                                                                 //Bu sayede çarpýlan objeye zarar verilip verilemeyeceði anlaþýlýr.
+
+
         {
-            damagable.GiveDamage(_playerRigidbody,_playerVisualTransform);
-            CameraShake.Instance.ShakeCamera(1f, 0.5f);
+            damagable.GiveDamage(_playerRigidbody,_playerVisualTransform);//Eðer obje zarar alabiliyorsa (IDamageable), GiveDamage metodu çaðrýlýr.
+            CameraShake.Instance.ShakeCamera(1f, 0.5f);//Kamera sallanma efekti baþlatýlýr.
+                                                       //1f: Sallanmanýn þiddeti.
+                                                       //0.5f: Sallanmanýn süresi.
+
         }
     }
 

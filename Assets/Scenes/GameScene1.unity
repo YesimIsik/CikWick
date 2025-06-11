@@ -4070,9 +4070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'OOPS..
-
-    YOU LOST!'
+  m_text: "OOPS..\nKAYBETT\u0130N!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
   m_sharedMaterial: {fileID: -8401501836383317185, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
@@ -5111,9 +5109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TRY AGAIN
-
-'
+  m_text: TEKRAR DENE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
   m_sharedMaterial: {fileID: -8401501836383317185, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
@@ -9406,16 +9402,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371522183}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203071010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -6.000062, y: 189.17383}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371522185
@@ -9438,9 +9434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MAIN MENU
-
-'
+  m_text: "MEN\xDC\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
   m_sharedMaterial: {fileID: -8401501836383317185, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
@@ -13158,9 +13152,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WOW...
-
-    CONGRATS'
+  m_text: "WOW...\nTEBR\u0130KLER!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
   m_sharedMaterial: {fileID: -8401501836383317185, guid: 0ea8d1d2d3c02b844a05d9433804c704, type: 2}
@@ -13691,6 +13683,10 @@ MonoBehaviour:
   _musicButton: {fileID: 1394857265}
   _resumeButton: {fileID: 527895746}
   _mainMenuButton: {fileID: 1536267799}
+  _musicActiveSprite: {fileID: 21300000, guid: 572d015c0604b0b49b09265a1072b1d4, type: 3}
+  _musicPassiveSprite: {fileID: 21300000, guid: 5f1b2ea972b168448b4c057a28eb7f2a, type: 3}
+  _soundActiveSprite: {fileID: 21300000, guid: b70c31f4b7494cf40ad2dfcb839120cf, type: 3}
+  _soundPassiveSprite: {fileID: 21300000, guid: 11231ee54f9eb5948b175a2a69b0d050, type: 3}
   _animationDuration: 0.3
 --- !u!1 &2009865976
 GameObject:

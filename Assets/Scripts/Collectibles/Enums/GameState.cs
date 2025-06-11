@@ -2,14 +2,15 @@ using UnityEngine;
 public enum GameState 
 
 { 
-    CutScene,
+    CutScene,// Oyun açýlýþ sahnesi veya ara sahne 
 
-    Play,
+    Play,// Oyunun aktif oynanma durumu 
 
-    Pause,
+    Pause, // Oyun duraklatýlmýþ, oyun akýþý geçici olarak durdurulmuþ
 
-    Resume,
+    Resume, // Oyunun duraklatmadan tekrar devam ettiði durum
 
-    GameOver,
-
+    GameOver,// Oyun bitmiþ, sonuç ekranýnýn veya son durumun gösterildiði aþama
 }
+
+
